@@ -1,0 +1,20 @@
+.navbar {
+    min-height: 50px;
+    background-color: #f0c443;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: black;
+}
+
+.nav-links {
+    display: flex;
+    width: 50%;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+}
+
+.logo {
+    max-height: 100px;
+}

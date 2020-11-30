@@ -14,7 +14,9 @@ function NepoetDisplay() {
           initial="initial"
           animate="enter"
           exit="exit"
-          variants={{ exit: { transition: { staggerChildren: 0.1 } } }}
+          variants={
+            { exit: { transition: { staggerChildren: 0.1 } } }
+          }
         >
           {Thumbnail}
         </motion.div>
@@ -39,18 +41,14 @@ const frameVariants = {
   hover: { scale: 0.95 }
 };
 
-const imageVariants = {
-  hover: { scale: 1.1 }
-};
-
 const nepoetImg = (
   <div>
     <motion.img
       src={happyK}
       alt="kajeek"
-      variants={imageVariants}
       transition={transition}
       whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.75 }}
     />
   </div>
 );

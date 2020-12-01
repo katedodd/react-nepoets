@@ -6,3 +6,13 @@ test('renders learn react link', () => {
   const linkElement = screen.getByText(/learn react/i);
   expect(linkElement).toBeInTheDocument();
 });
+
+/*test('links redirect correctly', () => {
+  //url when click home = * / home, etc.
+});*/
+
+/* test('ensure not IE', () => {
+  //check browser
+});*/
+
+

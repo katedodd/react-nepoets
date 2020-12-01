@@ -13,12 +13,11 @@ const AccordionHolder = ({ i, expanded, setExpanded, headerContent }) => {
     <div>
       <motion.header
         initial={false}
-        animate={{ backgroundColor: isOpen ? "#FF0088" : "#40dbb4" }}
         onClick={() => setExpanded(isOpen ? false : i)}
       >
         <div className="nepoetTitle">{headerContent}</div>
       </motion.header>
-      <AnimatePresence initial={true}>
+      <AnimatePresence initial={false}>
         {isOpen && (
           <motion.section
             key="content"
@@ -27,7 +26,11 @@ const AccordionHolder = ({ i, expanded, setExpanded, headerContent }) => {
             exit="collapsed"
             variants={{
               open: { opacity: 1, height: "auto" },
-              collapsed: { opacity: 0, height: 0 }
+              collapsed: {
+                scale: 0.5,
+                opacity: 0,
+                transition: { duration: 1.5, ...transition }
+              }
             }}
             transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
           >
@@ -42,7 +45,7 @@ const AccordionHolder = ({ i, expanded, setExpanded, headerContent }) => {
 export const Accordion = ({ content }) => {
   // This approach is if you only want max one section open at a time. If you want multiple
   // sections to potentially be open simultaneously, they can all be given their own `useState`.
-  const [expanded, setExpanded] = useState(0);
+  const [expanded, setExpanded] = useState(1);
 
   return accordionIds.map((i) => (
     <AccordionHolder i={i} expanded={expanded} setExpanded={setExpanded} headerContent={content} />
@@ -50,3 +53,6 @@ export const Accordion = ({ content }) => {
 };
 
 const accordionIds = [0];
+
+const transition = { duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] };
+

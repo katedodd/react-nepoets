@@ -1,8 +1,8 @@
-import './styles/about.css';
+import './styles/adopt.css';
 import React from 'react';
 import MotionDiv from "../components/motionDiv";
 
-function About() {
+function Adopt() {
   return (
     <MotionDiv content={content}/>
   );
@@ -10,8 +10,8 @@ function About() {
 
 const content = (
   <div>
-    <h1>About page</h1>
+    <h1>Adoption page</h1>
   </div>
 );
 
-export default About;
+export default Adopt;

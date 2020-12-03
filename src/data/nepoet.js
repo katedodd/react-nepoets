@@ -1,5 +1,12 @@
-export const nepoet = ({ name, color, species }) => {
-    name: this.name;
-    color: this.color;
-    species: this.species;
+import React from 'react';
+
+class Nepoet extends React.Component {
+    constructor(props) {
+        super(props);
+        name: this.props.name;
+        color: this.props.color;
+        species: this.props.species;
+    }
 }
+
+export default Nepoet;

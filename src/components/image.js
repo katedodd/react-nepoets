@@ -1,10 +1,11 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 function Image(props) {
     let color = props.petColor;
     let species = props.petSpecies;
     return(
-        <img src={`../imgs/nepoets/happy/happy_${color}_${species}.png`} alt='nepoet'/>
+        <motion.img src={`../imgs/nepoets/happy/happy_${props.color}_${props.species}.png`} alt='nepoet'/>
     );
 }
 

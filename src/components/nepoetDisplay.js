@@ -3,6 +3,8 @@ import React from 'react';
 import { motion } from "framer-motion";
 import happyK from "../imgs/nepoets/happy/happy_blue_kajeek.png";
 import { Accordion } from "./accordion/accordion";
+// import Image from "./image";
+// import Nepoet from '../data/nepoet';
 
 function NepoetDisplay() {
   return (
@@ -41,6 +43,30 @@ const frameVariants = {
   hover: { scale: 0.95 }
 };
 
+
+function getNameData() {
+  let nameData = localStorage.getItem('nameData');
+  console.log(nameData);
+  return nameData;
+}
+
+function getColorData() {
+  let colorData = localStorage.getItem('colorData');
+  return colorData;
+}
+
+function getSpeciesData() {
+  let speciesData = localStorage.getItem('speciesData');
+  return speciesData;
+}
+
+// const nepoetImg2 = (
+//   <div>
+//     <Image color={getColorData()} species={getSpeciesData()} />
+//     <p className="accordionText">{getNameData()}</p>
+//   </div>
+// )
+
 const nepoetImg = (
   <div>
     <motion.img
@@ -65,5 +91,13 @@ const Thumbnail = (
     </motion.div>
   </motion.div>
 );
+
+
+
+// function makeNewNepoet(props) {
+//   name: {nameData};
+//   species: {speciesData};
+//   color: {colorData};
+// }
 
 export default NepoetDisplay;

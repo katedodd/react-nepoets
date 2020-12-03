@@ -8,6 +8,21 @@ export const AccordionContent = () => (
     transition={{ duration: 0.4 }}
     className="content-placeholder"
   >
-    <p className="accordionText">mega ultra text</p>
+    <p className="accordionText">{getData()}</p>
+    <p>mega ultra slugmarine</p>
   </motion.div>
 );
+
+function getData() {
+  let nameData = localStorage.getItem('nameData');
+  let speciesData = localStorage.getItem('speciesData');
+  let colorData = localStorage.getItem('colorData');
+  console.log(nameData);
+  return(
+    <table>
+      <tr>{nameData}</tr>
+      <tr>{speciesData}</tr>
+      <tr>{colorData}</tr>
+    </table>
+  );
+}

@@ -4,16 +4,20 @@ import NepoetDisplay from "../components/nepoetDisplay";
 import MotionDiv from "../components/motionDiv";
 
 function Home() {
+
+  const pageContent = (
+    <div>
+      <h1>Home page</h1>
+      {/* <button>Get Name</button> */}
+      <NepoetDisplay/>
+    </div>
+  );
+
   return (
-    <MotionDiv content={content}/>
+    <MotionDiv content={pageContent}/>
   );
 }
 
-const content = (
-  <div>
-    <h1>Home page</h1>
-    <NepoetDisplay/>
-  </div>
-);
+
 
 export default Home;
